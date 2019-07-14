@@ -1,10 +1,8 @@
 const { isArray, iString, isNotUndef } = require('bimn')
 class Query {
-    constructor () {
-        this.oprator = { sq: '<=', s: '<', bq: '>=', b: '>', n: '!=' }
-    }
     loadModal (m) {
         this.model = m
+        this.oprator = { sq: '<=', s: '<', bq: '>=', b: '>', n: '!=' }
     }
     where (arg) {
         if (isArray(arg)) {

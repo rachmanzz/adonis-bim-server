@@ -2,6 +2,7 @@ const Query = require('./query.min')
 const { fReturn, iString } = require('bimn')
 class BimServer extends Query{
     constructor (Modal) {
+        super()
         this.loadModal(Modal)
     }
     bimRequest(request) {

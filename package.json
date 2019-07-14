@@ -1,0 +1,29 @@
+{
+  "name": "adonis-bim-server",
+  "version": "0.1.1",
+  "description": "adonis model database handler",
+  "main": "dist/bim-server.min.js",
+  "scripts": {
+    "build": "uglifyjs --compress --mangle -- bim-server.js > dist/bim-server.min.js",
+    "query:build": "uglifyjs --compress --mangle -- Query.js > dist/query.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachmanzz/adonis-bim-server.git"
+  },
+  "keywords": [
+    "adonis",
+    "sql",
+    "nodejs",
+    "database"
+  ],
+  "author": "Muhammad Abdurrahman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rachmanzz/adonis-bim-server/issues"
+  },
+  "homepage": "https://github.com/rachmanzz/adonis-bim-server#readme",
+  "dependencies": {
+    "bimn": "^0.1.1"
+  }
+}

@@ -28,7 +28,7 @@ class BimServer extends Query{
     }
 
     finally () {
-        const req = this._req()
+        const req = this._req
         if (iString(req.paginate)) {
             if (/^[0-9]+$/.test(req.paginate)) {
                 return this.model.paginate(parseInt(req.paginate))

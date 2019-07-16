@@ -8,6 +8,7 @@ class BimServer extends Query{
     }
     bimRequest(request) {
         const req = request.get()
+        this._req = fReturn(req, [ 'paginate', 'first' ])
         const mret = fReturn(req, [
                 'where', 'orwhere', 'wherelike', 'with', 'between',
                 'groupby', 'offset', 'limit', 'orderby'
@@ -23,7 +24,10 @@ class BimServer extends Query{
             if (key === 'limit') this.limit(mret[key])
             if (key === 'orderby') this.orderby(mret[key])
         }
+    }
 
+    finally () {
+        const req = this._req()
         if (iString(req.paginate)) {
             if (/^[0-9]+$/.test(req.paginate)) {
                 return this.model.paginate(parseInt(req.paginate))

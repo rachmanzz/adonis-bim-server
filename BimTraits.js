@@ -1,10 +1,9 @@
 const bimServer = require('adonis-bim-server')
 
 class BimTraits {
-    register (Model, options) {
+    register (Model, parent) {
         Model.queryMacro('bimRequest', function (req) {
-            new bimServer(this).bimRequest(req)
-            return this
+            return new bimServer(this).bimRequest(req)
         })
     }
 }

@@ -1,9 +1,9 @@
 const Query = require('./query.min')
 const { fReturn, iString } = require('bimn')
 class BimServer extends Query{
-    constructor (Modal) {
+    constructor (Model) {
         super()
-        this.modal = Modal
+        this.loadModel(Model)
         this.oprator = { sq: '<=', s: '<', bq: '>=', b: '>', n: '!=' }
     }
     bimRequest(request) {
@@ -26,15 +26,15 @@ class BimServer extends Query{
 
         if (iString(req.paginate)) {
             if (/^[0-9]+$/.test(req.paginate)) {
-                return this.modal.paginate(parseInt(req.paginate))
+                return this.model.paginate(parseInt(req.paginate))
             } else if (/^[0-9]+\|[0-9]+$/.test(req.paginate)) {
                 const m = req.paginate.match(/(^[0-9]+)\|([0-9]+)$/)
                 let key = parseInt(m[1])
                 let val = parseInt(m[2])
-                return this.modal.paginate(val, key)
+                return this.model.paginate(val, key)
             }
-        } else if (iString(req.first) && req.first === 'true') return this.modal.first()
-        else return this.modal.fetch()
+        } else if (iString(req.first) && req.first === 'true') return this.model.first()
+        else return this.model.fetch()
     }
 }
 

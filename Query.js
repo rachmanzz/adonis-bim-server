@@ -1,5 +1,9 @@
 const { isArray, iString, isNotUndef } = require('bimn')
 class Query {
+    loadModel (m) {
+        this.model = m
+        this.oprator = { sq: '<=', s: '<', bq: '>=', b: '>', n: '!=' }
+    }
     where (arg) {
         if (isArray(arg)) {
             const l = arg.length

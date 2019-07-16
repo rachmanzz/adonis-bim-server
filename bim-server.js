@@ -24,6 +24,7 @@ class BimServer extends Query{
             if (key === 'limit') this.limit(mret[key])
             if (key === 'orderby') this.orderby(mret[key])
         }
+        return this
     }
 
     finally () {

@@ -3,7 +3,8 @@ const { fReturn, iString } = require('bimn')
 class BimServer extends Query{
     constructor (Modal) {
         super()
-        this.loadModal(Modal)
+        this.modal = Modal
+        this.oprator = { sq: '<=', s: '<', bq: '>=', b: '>', n: '!=' }
     }
     bimRequest(request) {
         const req = request.get()

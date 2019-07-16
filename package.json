@@ -1,6 +1,6 @@
 {
   "name": "adonis-bim-server",
-  "version": "0.1.6",
+  "version": "0.2.1",
   "description": "adonis model database handler",
   "main": "dist/bim-server.min.js",
   "scripts": {

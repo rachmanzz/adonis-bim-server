@@ -113,7 +113,7 @@ class Query {
             let key = m[1]
             let val = m[2]
             let opt = m[3]
-            if (isNotUndef(opt)) this.model.whereRaw(key + 'LIKE ?', [ this._likeGen(opt, val) ])
+            if (isNotUndef(opt)) this.model.whereRaw(key + ' LIKE ?', [ this._likeGen(opt, val) ])
         }
     }
 

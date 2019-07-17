@@ -120,7 +120,7 @@ class Query {
     _likeGen (arg, val) {
         var result = val
         const split = function (data) {
-            if (/^[\w\d]+\,[\w\d]+$/) {
+            if (/^[\w\d]+\,[\w\d]+$/.test(data)) {
                 return data.split(',')
             }
             return data
@@ -180,8 +180,8 @@ class Query {
     }
 
     _orderBy (arg) {
-        if(/^[\w\d]+\|asc$|^[\w\d]+\|desc$/.test(obj.orderby)) {
-            const m = obj.orderby.match(/(^[\w\d]+)\|([\w\d]+)$/)
+        if(/^[\w\d]+\|asc$|^[\w\d]+\|desc$/.test(arg)) {
+            const m = arg.match(/(^[\w\d]+)\|([\w\d]+)$/)
             const key = m[1]
             const val = m[2]
             this.model.orderBy(key, val)

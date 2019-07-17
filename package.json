@@ -25,5 +25,8 @@
   "homepage": "https://github.com/rachmanzz/adonis-bim-server#readme",
   "dependencies": {
     "bimn": "^0.1.1"
+  },
+  "devDependencies": {
+    "uglify-es": "^3.3.9"
   }
 }
